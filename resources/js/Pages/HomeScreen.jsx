@@ -41,7 +41,7 @@ function HomeScreen() {
                         <div className="flex flex-col items-center justify-between xl:flex-row">
                             <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
                                 <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
-                                    AVHA    < span className="text-green-900"> UGANDA</span>
+                                    AVHA    < span className="text-light-green-400"> UGANDA</span>
                                 </h2>
                                 {/* <p className="max-w-xl mb-4 text-base text-gray-100 md:text-lg font-thin"> */}
                                 <Typography color='white'>
@@ -54,7 +54,10 @@ function HomeScreen() {
                                     aria-label=""
                                     className="mt-4 inline-flex text-white items-center font-semibold tracking-wider transition-colors duration-200 rounded p-2 bg-green-700 hover:bg-green-400"
                                 >
+                                    <Typography>
+
                                     Learn more
+                                    </Typography>
                                     <svg
                                         className="inline-block w-3 ml-2"
                                         fill="currentColor"

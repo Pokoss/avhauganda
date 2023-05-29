@@ -20,3 +20,21 @@ Route::get('/', function () {
 Route::get('/about-us', function () {
     return Inertia::render('AboutScreen');
 });
+Route::get('/rmncah', function () {
+    return Inertia::render('RMNCAHScreen');
+});
+Route::get('/hivaidstb', function () {
+    return Inertia::render('HivAidsTbScreen');
+});
+Route::get('/watsan', function () {
+    return Inertia::render('WatSanScreen');
+});
+Route::get('/advocacy', function () {
+    return Inertia::render('AdvocacyScreen');
+});
+Route::get('/gallery', function () {
+    return Inertia::render('GalleryScreen');
+});
+Route::get('/donate', function () {
+    return Inertia::render('DonateScreen');
+});

@@ -20,13 +20,9 @@ function Footer() {
           </a>
           <div className="mt-6 lg:max-w-sm">
             <p className="text-sm text-gray-100">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam.
+            AVHA-Uganda is an NGO based in Gulu City, Northern Uganda, addressing the impact of the civil war on healthcare and other challenges
             </p>
-            <p className="mt-4 text-sm text-gray-100">
-              Eaque ipsa quae ab illo inventore veritatis et quasi architecto
-              beatae vitae dicta sunt explicabo.
-            </p>
+            
           </div>
         </div>
         <div className="space-y-2 text-sm">
@@ -101,8 +97,7 @@ function Footer() {
             </a>
           </div>
           <p className="mt-4 text-sm text-gray-100">
-            Bacon ipsum dolor amet short ribs pig sausage prosciutto chicken
-            spare ribs salami.
+           You can follow us on our social media platforms for quick and easy messages, our activity updates ans so much more
           </p>
         </div>
       </div>
@@ -110,7 +105,7 @@ function Footer() {
         <p className="text-sm text-gray-100">
           © Copyright {(new Date().getFullYear())} AVHA-UGANDA. All rights reserved.
         </p>
-        <ul className="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
+        {/* <ul className="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
           <li>
             <a
               href="/"
@@ -135,7 +130,7 @@ function Footer() {
               Terms &amp; Conditions
             </a>
           </li>
-        </ul>
+        </ul> */}
       </div>
     </div>
   )

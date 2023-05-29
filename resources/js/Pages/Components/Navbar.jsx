@@ -95,10 +95,10 @@ function Navbar() {
                     </div>
                   </MenuHandler>
                   <MenuList>
-                    <MenuItem>RMNCAH</MenuItem>
-                    <MenuItem>HIV & AIDS/TB</MenuItem>
-                    <MenuItem>Water and Sanitation</MenuItem>
-                    <MenuItem>Advocacy Activities</MenuItem>
+                  <Link href='/rmncah' className='w-full h-full'><MenuItem>RMNCAH</MenuItem></Link>
+                  <Link href='/hivaidstb' className='w-full h-full'><MenuItem>HIV & AIDS/TB</MenuItem></Link>
+                  <Link href='/watsan' className='w-full h-full'><MenuItem>Water and Sanitation</MenuItem></Link>
+                  <Link href='/advocacy' className='w-full h-full'><MenuItem>Advocacy Activities</MenuItem></Link>
                   </MenuList>
                 </Menu>
                 {/* <a
@@ -111,7 +111,7 @@ function Navbar() {
               <li>
                 <Link
                   className="px-3 py-2 flex items-center   leading-snug text-white hover:opacity-75"
-                  href="/category/diaspora"
+                  href="/gallery"
                 >
                   <i className="fab fa-pinterest text-lg leading-lg text-white opacity-75"></i>
                   <span className="ml-3">
@@ -134,11 +134,11 @@ function Navbar() {
                     </span>
                 </Link>
               </li>
-              <li>
+              {/* <li>
 
                 <Link
                   className="px-3 py-2 flex items-center   leading-snug text-white hover:opacity-75"
-                  href="/category/diaspora"
+                  href="/donate"
                 >
                   <i className="fab fa-pinterest text-lg leading-lg text-white opacity-75"></i><span className="ml-3">
                     <Typography>
@@ -146,7 +146,7 @@ function Navbar() {
                     </Typography>
                     </span>
                 </Link>
-              </li>
+              </li> */}
 
 
             </ul>
