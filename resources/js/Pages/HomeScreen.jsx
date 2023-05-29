@@ -3,9 +3,25 @@ import Layout from './Components/Layout'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css';
 import { Input, Typography } from '@material-tailwind/react';
-import { Link } from '@inertiajs/react';
+import { Link, useForm } from '@inertiajs/react';
 
 function HomeScreen() {
+    const contactForm = useForm({
+        'name': null,
+        'email': null,
+        'message': null
+    });
+
+    const handleSubmitContact = e => {
+        e.preventDefault();
+        contactForm.post('/contact', {
+            preserveScroll: true, preserveState: true,
+            onSuccess: ()=>{
+                contactForm.reset()
+            } 
+        })
+    }
+
     return (
         <div>
             {/* Hero Section */}
@@ -56,7 +72,7 @@ function HomeScreen() {
                                 >
                                     <Typography>
 
-                                    Learn more
+                                        Learn more
                                     </Typography>
                                     <svg
                                         className="inline-block w-3 ml-2"
@@ -72,15 +88,15 @@ function HomeScreen() {
                                     <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                                         Contact Us
                                     </h3>
-                                    <form>
+                                    <form onSubmit={handleSubmitContact}>
                                         <div className='my-4'>
-                                            <Input color="green" label='Name' />
+                                            <Input color="green" label='Name' value={contactForm.data.name ?? ''} onChange={e => contactForm.setData('name', e.target.value)} />
                                         </div>
                                         <div className='my-4'>
-                                            <Input color="green" label='Email' />
+                                            <Input color="green" label='Email' value={contactForm.data.email ?? ''} onChange={e => contactForm.setData('email', e.target.value)} />
                                         </div>
                                         <div className='my-4'>
-                                            <Input color="green" label='Reason' />
+                                            <Input color="green" label='Reason' value={contactForm.data.message ?? ''} onChange={e => contactForm.setData('message', e.target.value)} />
                                         </div>
                                         <div className="mt-4 mb-2 sm:mb-4">
                                             <button
@@ -192,15 +208,15 @@ function HomeScreen() {
                     {/* <p className="font-light text-white mb-6 leading-relaxed" data-aos='fade-left'> */}
                     <Typography color='white'>
 
-                        "Welcome to AVHA-Uganda: Making a Difference in Health Action"<br/><br/>
+                        "Welcome to AVHA-Uganda: Making a Difference in Health Action"<br /><br />
 
-                        "Established in Northern Uganda's Gulu City, AVHA-Uganda is a reputable non-governmental organization (NGO) dedicated to improving health and well-being in the Acholi sub-region. Our organization traces its roots back to the year 2000 when a group of students from the war-ravaged area gathered at the Gulu School of Clinical Officers for academic discussions. Witnessing the challenging conditions their community faced, they decided to form a health club known as the Student's Volunteer Health Club (SVHC)."<br/><br/>
+                        "Established in Northern Uganda's Gulu City, AVHA-Uganda is a reputable non-governmental organization (NGO) dedicated to improving health and well-being in the Acholi sub-region. Our organization traces its roots back to the year 2000 when a group of students from the war-ravaged area gathered at the Gulu School of Clinical Officers for academic discussions. Witnessing the challenging conditions their community faced, they decided to form a health club known as the Student's Volunteer Health Club (SVHC)."<br /><br />
 
-                        "Driven by a deep desire to alleviate the suffering of their people residing in the Internally Displaced People's Camps (IDPs), the members of SVHC actively participated in treating and preventing the Ebola viral outbreak in Gulu between 2000 and 2001."<br/><br/>
+                        "Driven by a deep desire to alleviate the suffering of their people residing in the Internally Displaced People's Camps (IDPs), the members of SVHC actively participated in treating and preventing the Ebola viral outbreak in Gulu between 2000 and 2001."<br /><br />
 
-                        "In 2005, the SVHC members regrouped and established AVHA-Uganda as a more substantial organization with broader aims and objectives. Our team now consists of dedicated individuals with diverse backgrounds, ranging from health disciplines to humanities and social sciences. Together, we are committed to delivering high-quality health interventions to the community."<br/><br/>
+                        "In 2005, the SVHC members regrouped and established AVHA-Uganda as a more substantial organization with broader aims and objectives. Our team now consists of dedicated individuals with diverse backgrounds, ranging from health disciplines to humanities and social sciences. Together, we are committed to delivering high-quality health interventions to the community."<br /><br />
 
-                        "Today, AVHA-Uganda stands as a beacon of hope, working tirelessly to address the health challenges faced by our region. With a focus on Reproductive, Maternal, Newborn, Child, and Adolescent Health (RMNCAH), Water and Sanitation (WATSAN), HIV & AIDS/TB, Human Resources for Health (HRH), as well as policy and advocacy, we believe in making a tangible difference in the lives of individuals, families, and communities."<br/><br/>
+                        "Today, AVHA-Uganda stands as a beacon of hope, working tirelessly to address the health challenges faced by our region. With a focus on Reproductive, Maternal, Newborn, Child, and Adolescent Health (RMNCAH), Water and Sanitation (WATSAN), HIV & AIDS/TB, Human Resources for Health (HRH), as well as policy and advocacy, we believe in making a tangible difference in the lives of individuals, families, and communities."<br /><br />
 
                         "Join us on our journey as we strive to create a healthy community where individuals are empowered to take charge of their health and contribute to the overall development of our country."
 
@@ -225,12 +241,12 @@ function HomeScreen() {
                         <div class="lg:max-w-lg">
                             {/* <h1 class="text-3xl font-semibold tracking-wide text-gray-800 dark:text-white lg:text-4xl">AVHA UGANDA'S COMMINTMENT TO ADDRESSING HEALTH CHALLENGES</h1> */}
                             {/* <p class="my-4 text-gray-600 dark:text-gray-300"> */}
-                                <Typography>
+                            <Typography>
 
-                                "Our community in the Acholi sub-region has endured the devastating effects of a prolonged civil war that spanned over 20 years. The conflict between the Lord's Resistance Army (LRA) rebels and the Ugandan Government inflicted immense suffering and left a lasting impact on all sectors, particularly in the realm of healthcare. Today, even after the signing of a Peace Agreement in 2006, the repercussions of the war continue to manifest in limited access to safe water, inadequate healthcare services, a high prevalence of HIV/AIDS, poor reproductive, maternal, neonatal, child, and adolescent health indicators, and insufficient access to health information, among other challenges."<br/><br/>
+                                "Our community in the Acholi sub-region has endured the devastating effects of a prolonged civil war that spanned over 20 years. The conflict between the Lord's Resistance Army (LRA) rebels and the Ugandan Government inflicted immense suffering and left a lasting impact on all sectors, particularly in the realm of healthcare. Today, even after the signing of a Peace Agreement in 2006, the repercussions of the war continue to manifest in limited access to safe water, inadequate healthcare services, a high prevalence of HIV/AIDS, poor reproductive, maternal, neonatal, child, and adolescent health indicators, and insufficient access to health information, among other challenges."<br /><br />
 
                                 "At AVHA-Uganda, we recognize the urgent need for a united and multi-sectoral approach to tackle these challenges head-on. We believe that only through concrete and collective action can we bring about sustainable change and uplift our community. By partnering with the government, development agencies, and local stakeholders, we aim to forge a path towards a brighter future, where the scars of war are healed, and the well-being of our people is restored."
-                                </Typography>
+                            </Typography>
 
                             {/* </p> */}
                             {/* <Link href="/consultation" className="inline-block border-2 border-primary font-light text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white">Consult with us</Link> */}
@@ -256,14 +272,14 @@ function HomeScreen() {
                         </div>
                     </div>
                     <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-                    Rebuilding Lives, Restoring Hope: Addressing the Legacy of Conflict
-                        
+                        Rebuilding Lives, Restoring Hope: Addressing the Legacy of Conflict
+
                     </h2>
                     {/* <p className="text-base text-gray-700 md:text-lg"> */}
-                        <Typography>
+                    <Typography>
 
                         The civil war that ravaged our community in the Acholi sub-region for over two decades has left an indelible mark on the lives of our people. The conflict between the Lord's Resistance Army (LRA) rebels and the Ugandan Government brought about unimaginable suffering, displacements, and loss. As we emerge from the shadows of this dark chapter, it is crucial to recognize the profound impact of the civil war and the urgent need for collective action to address the resulting challenges.
-                        </Typography>
+                    </Typography>
                     {/* </p> */}
                 </div>
                 <div className="grid max-w-screen-lg gap-8 row-gap-10 mx-auto lg:grid-cols-2">
@@ -319,10 +335,10 @@ function HomeScreen() {
                                 Socio-economic Implications
                             </h6>
                             {/* <p className="mb-3 text-sm text-gray-900"> */}
-                                <Typography>
+                            <Typography>
 
                                 The civil war's aftermath has deeply affected our socio-economic landscape. Displacement and loss of livelihoods have crippled many families, exacerbating poverty and food insecurity. Rebuilding shattered lives and restoring economic stability requires a unified effort. Collective action is essential to provide sustainable solutions, create opportunities for economic empowerment, and break the cycle of poverty that the conflict perpetuated.
-                                </Typography>
+                            </Typography>
                             {/* </p> */}
 
                         </div>
@@ -393,14 +409,14 @@ function HomeScreen() {
             </div>
 
             <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-                  
-                    {/* <p className="text-base text-gray-700 md:text-lg"> */}
-                    <Typography>
+
+                {/* <p className="text-base text-gray-700 md:text-lg"> */}
+                <Typography>
 
                     The impact of the civil war on our community is far-reaching, but we refuse to let it define our future. We stand united, recognizing the need for collective action to address the challenges we face. Together, we can rebuild our health system, uplift socio-economic conditions, heal psychological wounds, and provide education opportunities for our youth. By joining hands, we can pave the way for a resilient and thriving community, where the scars of the past become testimonies of our strength and unity in the face of adversity.
-                    </Typography>
-                    {/* </p> */}
-                </div>
+                </Typography>
+                {/* </p> */}
+            </div>
             {/* End Slogan Section*/}
 
 
