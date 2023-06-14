@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import {
   Menu,
   MenuHandler,
@@ -8,18 +8,52 @@ import {
   PopoverHandler,
   PopoverContent,
   Button,
-  Dialog,
   Card,
   CardHeader,
   CardBody,
   CardFooter,
   Typography,
   Input,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+  Textarea,
+  
 } from "@material-tailwind/react";
-import { Link } from '@inertiajs/react';
+import { Link, useForm } from '@inertiajs/react';
+import FlutterWavePayment from '../FlatterwavePayment';
 
 function Navbar() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
+
+  const { data, setData, processing, post, reset, errors, transform } = useForm();
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(!open);
+  transform((data) => ({
+    ...data,
+    'activities': JSON.stringify((data.activities ?? '').split(',')),
+    'addons': JSON.stringify((data.addons ?? '').split(',')),
+  }));
+
+  const [userName, setUsername] = useState();
+  const [amount, setAmount] = useState();
+  const [description, setDescription] = useState();
+  const [email, setEmail] = useState();
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    post('/packages', {
+      preserveScroll: true, preserveState: true,
+      onSuccess: () => {
+        // toast.success('We have received you request, we shall contact you shortly')
+        reset();
+        setData({});
+        handleOpen();
+      }
+    });
+  }
+
   return (
     <>
 
@@ -134,19 +168,48 @@ function Navbar() {
                     </span>
                 </Link>
               </li>
-              {/* <li>
+              <li>
 
-                <Link
-                  className="px-3 py-2 flex items-center   leading-snug text-white hover:opacity-75"
-                  href="/donate"
-                >
-                  <i className="fab fa-pinterest text-lg leading-lg text-white opacity-75"></i><span className="ml-3">
-                    <Typography>
+              <Fragment>
+                  <Button color='white' onClick={handleOpen}>
                     Donate
-                    </Typography>
-                    </span>
-                </Link>
-              </li> */}
+                  </Button>
+                  <Dialog size='xl' open={open} handler={handleOpen}>
+                    <form onSubmit={handleSubmit} className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
+                      <DialogHeader>
+                        <Typography variant="h5" color="blue-gray">
+                          Thank you for supporting AVHA UGANDA
+                        </Typography>
+                      </DialogHeader>
+                      <DialogBody divider className="grid items-center justify-center align-middle place-items-center">
+                        <div className="mb-2 flex flex-col gap-3">
+                          <Input color='green' size="lg" label="Full Name"
+                            value={userName} onChange={e => setUsername(e.target.value)} error={errors.name} />
+                          <Input color='green' size="lg" label="Email"
+                            value={email} onChange={e => setEmail(e.target.value)} error={errors.email} />
+                          <Input color='green' size="lg" label="Amount (UGX)" type='number'
+                            value={amount} onChange={e => setAmount(e.target.value)} error={errors.amount} />
+                          {/* <Input color='green' type='file' size="lg" label="Image" accept="image/*"
+                    onChange={e => setData('image', e.target.files[0])} /> */}
+                        
+                          <Textarea color='green' size="lg" label="Few notes(optional)"
+                            value={description} onChange={e => setDescription(e.target.value)} error={errors.description} />
+
+                            <Typography>Note: The amount will be deducted in Ugandan shillings so the equivallent will be deducted from your account</Typography>
+                    
+                        </div>
+                      </DialogBody>
+                      <DialogFooter className="space-x-2">
+                        <Button variant="text" color="blue-gray" onClick={handleOpen}>
+                          close
+                        </Button>
+                        
+                        <FlutterWavePayment amount={amount} email={email} username={userName} descrition={description}/>
+                      </DialogFooter>
+                    </form>
+                  </Dialog>
+                </Fragment>
+              </li>
 
 
             </ul>

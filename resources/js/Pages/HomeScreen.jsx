@@ -8,6 +8,10 @@ import { Link } from '@inertiajs/react';
 function HomeScreen() {
     return (
         <div>
+
+
+
+
             {/* Hero Section */}
             <div className="relative">
                 <div className='absolute inset-0 w-full'>
@@ -36,10 +40,11 @@ function HomeScreen() {
                         </SplideSlide>
                     </Splide>
                 </div>
-                <div className="relative h-[750px] bg-gray-900 bg-opacity-50 xl:h-[600px]">
+                <div className="relative h-[750px] xl:h-[650px]">
                     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-                        <div className="flex flex-col items-center justify-between xl:flex-row">
-                            <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
+                        <div className="flex flex-col items-center justify-center xl:flex-row">
+                            <div className="bg-black grid place-items-center mt-32 items-center bg-opacity-30 p-3 rounded-lg mb-12 xl:mb-0 xl:pr-16 xl:w-8/12 ">
+
                                 <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
                                     AVHA    < span className="text-light-green-400"> UGANDA</span>
                                 </h2>
@@ -56,7 +61,7 @@ function HomeScreen() {
                                 >
                                     <Typography>
 
-                                    Learn more
+                                        Learn more
                                     </Typography>
                                     <svg
                                         className="inline-block w-3 ml-2"
@@ -67,35 +72,39 @@ function HomeScreen() {
                                     </svg>
                                 </Link>
                             </div>
-                            <div className="w-full max-w-xl xl:px-8 xl:w-5/12 opacity-40 hover:opacity-95">
-                                <div className="bg-white rounded shadow-2xl p-5 sm:p-7">
-                                    <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
-                                        Contact Us
-                                    </h3>
-                                    <form>
-                                        <div className='my-4'>
-                                            <Input color="green" label='Name' />
-                                        </div>
-                                        <div className='my-4'>
-                                            <Input color="green" label='Email' />
-                                        </div>
-                                        <div className='my-4'>
-                                            <Input color="green" label='Reason' />
-                                        </div>
-                                        <div className="mt-4 mb-2 sm:mb-4">
-                                            <button
-                                                type="submit"
-                                                className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-green-900 hover:bg-green-500 focus:shadow-outline focus:outline-none"
-                                            >
-                                                Contact
-                                            </button>
-                                        </div>
-                                        <p className="text-xs text-gray-600 sm:text-sm">
-                                            We appriate your intrest in us
-                                        </p>
-                                    </form>
-                                </div>
-                            </div>
+
+                            {/* <div className="w-full max-w-xl xl:px-8 xl:w-5/12 opacity-70   hover:opacity-100">
+                <div className="bg-white rounded shadow-2xl p-7 sm:p-10 " data-aos='zoom-in-left'>
+                  <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
+                    Book your perfect getaway trip
+                  </h3>
+                  <form onSubmit={handleSubmitContact}>
+                    <div className='my-2'>
+                      <Input color="green" label='Name' value={contactForm.data.name ?? ''} onChange={e => contactForm.setData('name', e.target.value)} />
+                    </div>
+                    <div className='my-2'>
+                      <Input color="green" label='Email' value={contactForm.data.email ?? ''} onChange={e => contactForm.setData('email', e.target.value)} />
+                    </div>
+                    <div className='my-2'>
+                      <Input color="green" label='Phone' value={contactForm.data.phone ?? ''} onChange={e => contactForm.setData('phone', e.target.value)} />
+                    </div>
+                    <div className="mt-4 mb-2 sm:mb-4">
+                      <button
+                        type="submit"
+                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-primary hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                      >
+                        Send
+                      </button>
+                    </div>
+                    <p className="text-xs text-gray-600 sm:text-sm">
+                      We look forword to planning your trip
+                    </p>
+                  </form>
+                </div>
+              </div> */}
+
+
+
                         </div>
                     </div>
                 </div>
@@ -104,114 +113,18 @@ function HomeScreen() {
 
 
 
-            {/*Mission Section*/}
-            <div className="grid grid-cols-1 md:grid-cols-2">
-
-                <div className="bg-white p-12 md:p-24 flex justify-end items-center">
-                    <a href="" data-aos='fade-right'>
-                        <img src="/Images/Web/mission.png" className="w-full max-w-md" />
-                    </a>
-                </div>
-
-                <div className="bg-gray-100 p-12 md:p-24 flex justify-start items-center">
-                    <div className="max-w-md" data-aos='fade-left'>
-                        <div className="w-24 h-2 bg-green-800 mb-4"></div>
-                        <h2 className="font-display font-bold text-2xl md:text-3xl lg:text-4xl mb-6">Mission</h2>
-                        {/* <p className="font-light text-gray-600 text-sm md:text-base mb-6 leading-relaxed"> */}
-                        <Typography>
-                            AVHA Mission is to partner with the government and development agencies to provide health services, promote environmental health, safe water and nutritional support to achieve good health for the people.
-                        </Typography>
-                        {/* </p> */}
-                        {/* <a href="" className="inline-block border-2 border-primary font-light text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white">Book Now</a> */}
-                    </div>
-                </div>
-
-            </div>
-
-            {/* End Mission Section*/}
-
-            {/* Vision Section Section*/}
-            <div className="grid grid-cols-1 md:grid-cols-2">
-
-
-                <div className="bg-white p-12 md:p-24 flex justify-start items-center">
-                    <a href="" data-aos='fade-left'>
-                        <img src="/Images/Web/vision.png" className="w-full max-w-md" />
-                    </a>
-                </div>
-
-                <div className="md:order-first bg-gray-100 p-12 md:p-24 flex justify-end items-center">
-                    <div className="max-w-md" data-aos='fade-right'>
-                        <div className="w-24 h-2 bg-green-800 mb-4"></div>
-                        <h2 className="font-display font-bold text-2xl md:text-3xl lg:text-4xl mb-6">Vision</h2>
-                        {/* <p className="font-light text-gray-600 text-sm md:text-base mb-6 leading-relaxed"> */}
-                        <Typography>
-
-                            AVHA envisions a healthy community in which individuals, families and communities take charge of their health and are able to play their role in the development of the country. This vision aspires for the realization of a healthy and developed community.
-                        </Typography>
-                        {/* </p> */}
-                        {/* <a href="" className="inline-block border-2 border-primary font-light text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white">Book Custom Package</a> */}
-                    </div>
-                </div>
-
-            </div>
-
-            {/* End Vision Section Section*/}
-            {/*Core Values Section*/}
-            <div className="grid grid-cols-1 md:grid-cols-2">
-
-                <div className="bg-white p-12 md:p-24 flex justify-end items-center">
-                    <a href="" data-aos='fade-right'>
-                        <img src="/Images/Web/values.png" className="w-full max-w-md" />
-                    </a>
-                </div>
-
-                <div className="bg-gray-100 p-12 md:p-24 flex justify-start items-center">
-                    <div className="max-w-md" data-aos='fade-left'>
-                        <div className="w-24 h-2 bg-green-800 mb-4"></div>
-                        <h2 className="font-display font-bold text-2xl md:text-3xl lg:text-4xl mb-6">Core Values</h2>
-                        {/* <p className="font-light text-gray-600 text-sm md:text-base mb-6 leading-relaxed"> */}
-                        <Typography>
-                            AVHA works with integrity and commitment to improve the health of the people and strives to be fully accountable, transparent and cost effective. We are committed to learning and innovation and to giving our full support to the schools education programme.
-                        </Typography>
-                        {/* </p> */}
-
-                    </div>
-                </div>
-
-            </div>
-
-            {/* End About Section*/}
-
-            {/* Events and Travel Section Section*/}
-            <div style={{ backgroundImage: 'url("/Images/Web/20210329_184046.jpg")', backgroundAttachment: 'fixed', backgroundSize: "cover", backgroundRepeat: "no-repeat" }} >
-                <div className="w-full px-20 mx-auto text-center pt-10 md:py-10 bg-black bg-opacity-70" data-aos='fade-down'>
-                    <div className="w-24 h-2 bg-green-800 mb-4 mx-auto"></div>
-                    <h2 className="font-display font-bold text-white text-3xl md:text-4xl lg:text-5xl mb-8">History of AVHA</h2>
-
-                    {/* <p className="font-light text-white mb-6 leading-relaxed" data-aos='fade-left'> */}
-                    <Typography color='white'>
-
-                        "Welcome to AVHA-Uganda: Making a Difference in Health Action"<br/><br/>
-
-                        "Established in Northern Uganda's Gulu City, AVHA-Uganda is a reputable non-governmental organization (NGO) dedicated to improving health and well-being in the Acholi sub-region. Our organization traces its roots back to the year 2000 when a group of students from the war-ravaged area gathered at the Gulu School of Clinical Officers for academic discussions. Witnessing the challenging conditions their community faced, they decided to form a health club known as the Student's Volunteer Health Club (SVHC)."<br/><br/>
-
-                        "Driven by a deep desire to alleviate the suffering of their people residing in the Internally Displaced People's Camps (IDPs), the members of SVHC actively participated in treating and preventing the Ebola viral outbreak in Gulu between 2000 and 2001."<br/><br/>
-
-                        "In 2005, the SVHC members regrouped and established AVHA-Uganda as a more substantial organization with broader aims and objectives. Our team now consists of dedicated individuals with diverse backgrounds, ranging from health disciplines to humanities and social sciences. Together, we are committed to delivering high-quality health interventions to the community."<br/><br/>
-
-                        "Today, AVHA-Uganda stands as a beacon of hope, working tirelessly to address the health challenges faced by our region. With a focus on Reproductive, Maternal, Newborn, Child, and Adolescent Health (RMNCAH), Water and Sanitation (WATSAN), HIV & AIDS/TB, Human Resources for Health (HRH), as well as policy and advocacy, we believe in making a tangible difference in the lives of individuals, families, and communities."<br/><br/>
-
-                        "Join us on our journey as we strive to create a healthy community where individuals are empowered to take charge of their health and contribute to the overall development of our country."
-
-                    </Typography>
-                    {/* </p> */}
-                </div>
 
 
 
-            </div>
-            {/*End Events and Travel Section Section*/}
+            {/* Hero Section */}
+            
+            {/*End Hero Section */}
+
+
+
+
+
+            
 
             {/*Consultation  Section*/}
             <div className="max-w-xl mx-auto text-center pt-10 md:py-4" data-aos='fade-down'>
@@ -225,12 +138,12 @@ function HomeScreen() {
                         <div class="lg:max-w-lg">
                             {/* <h1 class="text-3xl font-semibold tracking-wide text-gray-800 dark:text-white lg:text-4xl">AVHA UGANDA'S COMMINTMENT TO ADDRESSING HEALTH CHALLENGES</h1> */}
                             {/* <p class="my-4 text-gray-600 dark:text-gray-300"> */}
-                                <Typography>
+                            <Typography>
 
-                                "Our community in the Acholi sub-region has endured the devastating effects of a prolonged civil war that spanned over 20 years. The conflict between the Lord's Resistance Army (LRA) rebels and the Ugandan Government inflicted immense suffering and left a lasting impact on all sectors, particularly in the realm of healthcare. Today, even after the signing of a Peace Agreement in 2006, the repercussions of the war continue to manifest in limited access to safe water, inadequate healthcare services, a high prevalence of HIV/AIDS, poor reproductive, maternal, neonatal, child, and adolescent health indicators, and insufficient access to health information, among other challenges."<br/><br/>
+                                "Our community in the Acholi sub-region has endured the devastating effects of a prolonged civil war that spanned over 20 years. The conflict between the Lord's Resistance Army (LRA) rebels and the Ugandan Government inflicted immense suffering and left a lasting impact on all sectors, particularly in the realm of healthcare. Today, even after the signing of a Peace Agreement in 2006, the repercussions of the war continue to manifest in limited access to safe water, inadequate healthcare services, a high prevalence of HIV/AIDS, poor reproductive, maternal, neonatal, child, and adolescent health indicators, and insufficient access to health information, among other challenges."<br /><br />
 
                                 "At AVHA-Uganda, we recognize the urgent need for a united and multi-sectoral approach to tackle these challenges head-on. We believe that only through concrete and collective action can we bring about sustainable change and uplift our community. By partnering with the government, development agencies, and local stakeholders, we aim to forge a path towards a brighter future, where the scars of war are healed, and the well-being of our people is restored."
-                                </Typography>
+                            </Typography>
 
                             {/* </p> */}
                             {/* <Link href="/consultation" className="inline-block border-2 border-primary font-light text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white">Consult with us</Link> */}
@@ -256,14 +169,14 @@ function HomeScreen() {
                         </div>
                     </div>
                     <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-                    Rebuilding Lives, Restoring Hope: Addressing the Legacy of Conflict
-                        
+                        Rebuilding Lives, Restoring Hope: Addressing the Legacy of Conflict
+
                     </h2>
                     {/* <p className="text-base text-gray-700 md:text-lg"> */}
-                        <Typography>
+                    <Typography>
 
                         The civil war that ravaged our community in the Acholi sub-region for over two decades has left an indelible mark on the lives of our people. The conflict between the Lord's Resistance Army (LRA) rebels and the Ugandan Government brought about unimaginable suffering, displacements, and loss. As we emerge from the shadows of this dark chapter, it is crucial to recognize the profound impact of the civil war and the urgent need for collective action to address the resulting challenges.
-                        </Typography>
+                    </Typography>
                     {/* </p> */}
                 </div>
                 <div className="grid max-w-screen-lg gap-8 row-gap-10 mx-auto lg:grid-cols-2">
@@ -319,10 +232,10 @@ function HomeScreen() {
                                 Socio-economic Implications
                             </h6>
                             {/* <p className="mb-3 text-sm text-gray-900"> */}
-                                <Typography>
+                            <Typography>
 
                                 The civil war's aftermath has deeply affected our socio-economic landscape. Displacement and loss of livelihoods have crippled many families, exacerbating poverty and food insecurity. Rebuilding shattered lives and restoring economic stability requires a unified effort. Collective action is essential to provide sustainable solutions, create opportunities for economic empowerment, and break the cycle of poverty that the conflict perpetuated.
-                                </Typography>
+                            </Typography>
                             {/* </p> */}
 
                         </div>
@@ -393,18 +306,177 @@ function HomeScreen() {
             </div>
 
             <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-                  
-                    {/* <p className="text-base text-gray-700 md:text-lg"> */}
-                    <Typography>
+
+                {/* <p className="text-base text-gray-700 md:text-lg"> */}
+                <Typography>
 
                     The impact of the civil war on our community is far-reaching, but we refuse to let it define our future. We stand united, recognizing the need for collective action to address the challenges we face. Together, we can rebuild our health system, uplift socio-economic conditions, heal psychological wounds, and provide education opportunities for our youth. By joining hands, we can pave the way for a resilient and thriving community, where the scars of the past become testimonies of our strength and unity in the face of adversity.
-                    </Typography>
-                    {/* </p> */}
-                </div>
+                </Typography>
+                {/* </p> */}
+            </div>
             {/* End Slogan Section*/}
 
 
+            <div className="container my-24 px-6 mx-auto">
 
+
+<section className="mb-32 text-gray-800">
+
+  <div className="relative overflow-hidden h-96 bg-no-repeat bg-cover" style={{ backgroundPosition: '50%', backgroundImage: "url('/Images/Web/avha25.jpg')", backgroundAttachment: 'fixed', backgroundSize: "contain", backgroundRepeat: "no-repeat" }}
+  >
+    <div className="max-w-xl mx-auto text-center pt-10 md:py-10" data-aos='fade-down'>
+      <div className="w-24 h-2 bg-green-800 mb-4 mx-auto"></div>
+      <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl">Contact Us</h2>
+    </div>
+  </div>
+  <div className="container text-gray-800 px-4 md:px-12" style={{ marginTop: "-200px", background: 'hsla(0, 0%, 100%, 0.8)' }}>
+    <div className="block rounded-lg shadow-lg py-10 md:py-12 px-2 md:px-6" style={{ backdropFilter: "blur(20px)" }}
+    >
+      <div className="flex flex-wrap" data-aos='zoom-in-left' >
+        <div className="grow-0 shrink-0 basis-auto w-full xl:w-5/12 px-3 lg:px-6 mb-12 xl:mb-0">
+          <form>
+            <div className="form-group mb-6">
+              <input type="text" className="form-control block
+      w-full
+      px-3
+      py-1.5
+      text-base
+      font-normal
+      text-gray-700
+      bg-white bg-clip-padding
+      border border-solid border-gray-300
+      rounded
+      transition
+      ease-in-out
+      m-0
+      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
+                placeholder="Name" />
+            </div>
+            <div className="form-group mb-6">
+              <input type="email" className="form-control block
+      w-full
+      px-3
+      py-1.5
+      text-base
+      font-normal
+      text-gray-700
+      bg-white bg-clip-padding
+      border border-solid border-gray-300
+      rounded
+      transition
+      ease-in-out
+      m-0
+      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput8"
+                placeholder="Email address" />
+            </div>
+            <div className="form-group mb-6">
+              <textarea className="
+      form-control
+      block
+      w-full
+      px-3
+      py-1.5
+      text-base
+      font-normal
+      text-gray-700
+      bg-white bg-clip-padding
+      border border-solid border-gray-300
+      rounded
+      transition
+      ease-in-out
+      m-0
+      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+    " id="exampleFormControlTextarea13" rows="3" placeholder="Message"></textarea>
+            </div>
+            <div className="form-group form-check text-center mb-6">
+              <input type="checkbox"
+                className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain mr-2 cursor-pointer"
+                id="exampleCheck87" />
+              <label className="form-check-label inline-block text-gray-800" htmlFor="exampleCheck87">Send me a copy of this
+                message</label>
+            </div>
+            <button type="submit" className="w-full px-6 py-2.5 bg-primary text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+              Send
+            </button>
+          </form>
+        </div>
+        <div className="grow-0 shrink-0 basis-auto w-full xl:w-7/12">
+          <div className="flex flex-wrap">
+            <div className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+              <div className="flex items-start bg-white p-2 rounded bg-opacity-70">
+                <div className="shrink-0">
+                  <div className="p-4 bg-primary rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="headset" className="w-5 text-white"
+                      role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <path fill="currentColor"
+                        d="M192 208c0-17.67-14.33-32-32-32h-16c-35.35 0-64 28.65-64 64v48c0 35.35 28.65 64 64 64h16c17.67 0 32-14.33 32-32V208zm176 144c35.35 0 64-28.65 64-64v-48c0-35.35-28.65-64-64-64h-16c-17.67 0-32 14.33-32 32v112c0 17.67 14.33 32 32 32h16zM256 0C113.18 0 4.58 118.83 0 256v16c0 8.84 7.16 16 16 16h16c8.84 0 16-7.16 16-16v-16c0-114.69 93.31-208 208-208s208 93.31 208 208h-.12c.08 2.43.12 165.72.12 165.72 0 23.35-18.93 42.28-42.28 42.28H320c0-26.51-21.49-48-48-48h-32c-26.51 0-48 21.49-48 48s21.49 48 48 48h181.72c49.86 0 90.28-40.42 90.28-90.28V256C507.42 118.83 398.82 0 256 0z">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
+                <div className="grow ml-6">
+                  <p className="font-bold mb-1 text-gray-600 text-sm md:text-base leading-relaxed">Call Us</p>
+                  <p className="font-light text-gray-600 text-sm md:text-base leading-relaxed">+256 756 777 995</p>
+                </div>
+              </div>
+            </div>
+            <div className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6 ">
+              <div className="flex items-start bg-white p-2 rounded bg-opacity-70">
+                <div className="shrink-0">
+                  <div className="p-4 bg-primary rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                    </svg>
+
+                  </div>
+                </div>
+                <div className="grow ml-6">
+                  <p className="font-bold mb-1 text-gray-600 text-sm md:text-base leading-relaxed">Email</p>
+                  <p className="font-light text-gray-600 text-xs leading-relaxed">info@avhauganda.com</p>
+                </div>
+              </div>
+            </div>
+            <div className="mb-12 md:mb-0 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+              <div className="flex align-start bg-white p-2 rounded bg-opacity-70">
+                <div className="shrink-0">
+                  <div className="p-4 bg-primary rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" fill="white" className="h-5">
+                      <path d="M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="grow ml-6">
+                  <p className="font-bold mb-1 text-gray-600 text-sm md:text-base leading-relaxed">Twitter</p>
+                  <p className="font-light text-gray-600 text-sm md:text-base leading-relaxed">@avhauganda</p>
+                </div>
+              </div>
+            </div>
+            <div className="grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+              <div className="flex align-start bg-white p-2 rounded bg-opacity-70">
+                <div className="shrink-0">
+                  <div className="p-4 bg-primary rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" fill="white" className="h-5 ">
+                      <path d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="grow ml-6">
+                  <p className="font-bold mb-1 text-gray-600 text-sm md:text-base leading-relaxed">Facebook</p>
+                  <p className="font-light text-gray-600 text-sm md:text-base leading-relaxed">AVHA UGANDA</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+</div>
 
 
         </div>
