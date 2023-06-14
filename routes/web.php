@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactusController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -38,3 +39,4 @@ Route::get('/gallery', function () {
 Route::get('/donate', function () {
     return Inertia::render('DonateScreen');
 });
+Route::post('/contact', [ContactusController::class, 'submitForm']);

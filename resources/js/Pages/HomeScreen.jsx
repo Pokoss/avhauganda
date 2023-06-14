@@ -3,9 +3,25 @@ import Layout from './Components/Layout'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css';
 import { Input, Typography } from '@material-tailwind/react';
-import { Link } from '@inertiajs/react';
+import { Link, useForm } from '@inertiajs/react';
 
 function HomeScreen() {
+    const contactForm = useForm({
+        'name': null,
+        'email': null,
+        'message': null
+    });
+
+    const handleSubmitContact = e => {
+        e.preventDefault();
+        contactForm.post('/contact', {
+            preserveScroll: true, preserveState: true,
+            onSuccess: ()=>{
+                contactForm.reset()
+            } 
+        })
+    }
+
     return (
         <div>
 
