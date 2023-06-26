@@ -5,35 +5,35 @@ import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css';
 
 const images = [
-  {'image':'/Images/Web/hero2.jpg'},
-  {'image':'/Images/Web/hero3.jpg'},
-  {'image': '/Images/Web/ava1.jpg'},
-  {'image': '/Images/Web/avha2.jpg'},
-  {'image': '/Images/Web/avha3.jpg'},
-  {'image':'/Images/Web/avha4.jpg'},
-  {'image':'/Images/Web/avha5.jpg'},
-  {'image':'/Images/Web/avha6.jpg'},
-  {'image':'/Images/Web/avha7.jpg'},
-  {'image':'/Images/Web/avha8.jpg'},
-  {'image':'/Images/Web/avha9.jpg'},
-  {'image': '/Images/Web/avha10.jpg'},
-  {'image':'/Images/Web/avha11.jpg'},
-  {'image':'/Images/Web/avha12.jpg'},
-  {'image':'/Images/Web/avha13.jpg'},
-  {'image':'/Images/Web/avha14.jpg'},
-  {'image':'/Images/Web/avha15.jpg'},
-  {'image':'/Images/Web/avha16.jpg'},
-  {'image':'/Images/Web/avha17.jpg'},
-  {'image':'/Images/Web/avha18.jpg'},
-  {'image':'/Images/Web/avha19.jpg'},
-  {'image':'/Images/Web/avha20.jpg'},
-  {'image':'/Images/Web/avha21.jpg'},
-  {'image':'/Images/Web/avha22.jpg'},
-  {'image':'/Images/Web/avha23.jpg'},
-  {'image':'/Images/Web/avha24.jpg'},
-  {'image':'/Images/Web/avha25.jpg'},
-  {'image':'/Images/Web/avha26.jpg'},
-  {'image':'/Images/Web/avha27.jpg'},
+  { 'image': '/Images/Web/hero2.jpg' },
+  { 'image': '/Images/Web/hero3.jpg' },
+  { 'image': '/Images/Web/ava1.jpg' },
+  { 'image': '/Images/Web/avha2.jpg' },
+  { 'image': '/Images/Web/avha3.jpg' },
+  { 'image': '/Images/Web/avha4.jpg' },
+  { 'image': '/Images/Web/avha5.jpg' },
+  { 'image': '/Images/Web/avha6.jpg' },
+  { 'image': '/Images/Web/avha7.jpg' },
+  { 'image': '/Images/Web/avha8.jpg' },
+  { 'image': '/Images/Web/avha9.jpg' },
+  { 'image': '/Images/Web/avha10.jpg' },
+  { 'image': '/Images/Web/avha11.jpg' },
+  { 'image': '/Images/Web/avha12.jpg' },
+  { 'image': '/Images/Web/avha13.jpg' },
+  { 'image': '/Images/Web/avha14.jpg' },
+  { 'image': '/Images/Web/avha15.jpg' },
+  { 'image': '/Images/Web/avha16.jpg' },
+  { 'image': '/Images/Web/avha17.jpg' },
+  { 'image': '/Images/Web/avha18.jpg' },
+  { 'image': '/Images/Web/avha19.jpg' },
+  { 'image': '/Images/Web/avha20.jpg' },
+  { 'image': '/Images/Web/avha21.jpg' },
+  { 'image': '/Images/Web/avha22.jpg' },
+  { 'image': '/Images/Web/avha23.jpg' },
+  { 'image': '/Images/Web/avha24.jpg' },
+  { 'image': '/Images/Web/avha25.jpg' },
+  { 'image': '/Images/Web/avha26.jpg' },
+  { 'image': '/Images/Web/avha27.jpg' },
 ]
 
 function GalleryScreen() {
@@ -89,24 +89,32 @@ function GalleryScreen() {
         </div>
       </div> */}
 
-<Splide options={{ autoplay: true, rewind: true, arrows: true }}>
+      <Splide options={{
+        arrows: true,
+        type: 'loop',
+        perPage: 3,
+        perMove: 1,
+        gap: '1rem',
+        autoplay: true,
+        interval: 3000,
+      }}>
         {
-          images && images.map((image)=>(
-            
-                        <SplideSlide>
-                            <img
-                                src={image.image}
-                                className="h-[750px] object-contain w-full xl:h-[600px]"
-                                alt=""
-                            />
-                        </SplideSlide>
-                        
-                  
+          images && images.map((image) => (
+
+            <SplideSlide>
+              <img
+                src={image.image}
+                className="h-[750px] object-contain w-full xl:h-[600px]"
+                alt=""
+              />
+            </SplideSlide>
+
+
           ))
-          
+
         }
-          </Splide>
-   
+      </Splide>
+
 
 
       {/* <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
